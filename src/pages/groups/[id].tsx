@@ -35,7 +35,7 @@ export default function GroupPage() {
 
   const GET_GROUP_POSTS = gql`
     query getGroupPosts($id: ID!) {
-      groups(where: { id: $id }) {
+      groups(where: { id: $id }, options: { sort: { createdAt: DESC } }) {
         posts {
           content
           createdAt
@@ -81,7 +81,7 @@ export default function GroupPage() {
   console.log(postsData);
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center pb-10">
       <div className=" w-4/6 space-y-4 flex flex-col ">
         <div className="space-y-4">
           <div>
@@ -121,7 +121,7 @@ export default function GroupPage() {
 
           <div className="space-y-4">
             <div className="text-subtileText">Group Posts</div>
-            {postsData.groups[0].posts && (
+            {!postsData.groups[0].posts && (
               <p className="flex justify-center items-center text h-32 text-subTitle">
                 Sorry, there are no posts in this group.
               </p>

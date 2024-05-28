@@ -12,8 +12,9 @@ import Image from "next/image";
 import UserPostEvent from "./components/userPostEvent";
 import PostComponent from "@/components/postComponent";
 import { defaultEventsBanner } from "@/utils/defaultImages";
+import { formatDate } from "@/utils/dateFormatter";
 
-function EventPage(props: IEvent) {
+function EventPage(props: any) {
   const router = useRouter();
   const { id } = router.query;
   const { user } = useAuth();
@@ -108,8 +109,8 @@ function EventPage(props: IEvent) {
               />
               <div>
                 <div className="text-white">{eventData.events[0].name}</div>
-                <div className="text-white">
-                  {eventData.events[0].description}
+                <div className="text-subTitle text-sm">
+                  {formatDate(eventData.events[0].createdAt)}
                 </div>
               </div>
               <div className="flex items-center w-full">

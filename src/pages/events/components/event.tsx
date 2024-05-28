@@ -8,16 +8,9 @@ import { gql, useMutation } from "@apollo/client";
 import Link from "next/link";
 
 import { defaultEventsBanner } from "@/utils/defaultImages";
+import { formatDate } from "@/utils/dateFormatter";
 
-export interface EventsProps {
-  eventsName?: string;
-  eventsNumber?: number;
-  eventsDate?: string;
-  eventImage?: StaticImageData | undefined;
-  eventsPlace?: string;
-}
-
-export default function Event(props: IEvent) {
+export default function Event(props: any) {
   const [eventParticipate, setEventParticipate] = useState(false);
   const { user } = useAuth();
 
@@ -84,9 +77,11 @@ export default function Event(props: IEvent) {
       />
       <div className="flex flex-col space-y-4">
         <div className="flex flex-col">
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 items-end">
             <div className="text-white">{props.name}</div>
-            <div className="text-subTitle">{props.description}</div>
+            <div className="text-subTitle text-sm">
+              {formatDate(props.createdAt)}
+            </div>
           </div>
           <div className="text-subTitle">{props.location}</div>
         </div>

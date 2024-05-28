@@ -85,7 +85,7 @@ export default function CreateEventModal({ onClose }: any) {
             <div className="text-subTitle">Name</div>
             <input
               className="rounded-xl w-full bg-inputField-background focus:outline-none text-subTitle py-3 px-4 border border-inputField-outline placeholder:text-subtileText"
-              placeholder="Group Name"
+              placeholder="Event Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -93,13 +93,13 @@ export default function CreateEventModal({ onClose }: any) {
             <div className="text-subTitle">Description</div>
             <input
               className="rounded-xl w-full bg-inputField-background focus:outline-none text-subTitle py-3 px-4 border border-inputField-outline placeholder:text-subtileText"
-              placeholder="What is this group about?"
+              placeholder="What is this event about?"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
             <input
               className="rounded-xl w-full bg-inputField-background focus:outline-none text-subTitle py-3 px-4 border border-inputField-outline placeholder:text-subtileText"
-              placeholder="What is this group about?"
+              placeholder="Where does it take place?"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
