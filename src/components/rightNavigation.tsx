@@ -68,8 +68,10 @@ function RightNavigation() {
     <div className="flex flex-col h-screen center-items p-5 gap-5">
       <div className="space-y-2">
         <div className="text-subtileText">Suggestions</div>
+
         {data.users[0]?.recommendUserByHobby
           ?.slice(0, usersToShow)
+          .filter((item: any) => item.username !== user.username)
           .map((item: any) => (
             <div key={item.id}>
               <Suggestions {...item} />
