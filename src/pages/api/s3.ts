@@ -10,10 +10,10 @@ const generateFileName = (bytes = 32) =>
   crypto.randomBytes(bytes).toString("hex");
 
 const s3Client = new S3Client({
-  region: process.env.AWS_REGION!,
+  region: process.env.NEXT_PUBLIC_AWS_REGION!,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY!,
   },
 });
 
@@ -52,7 +52,7 @@ export async function generateUploadURL({
   }
 
   const putObjectCommand = new PutObjectCommand({
-    Bucket: process.env.AWS_NAME!,
+    Bucket: process.env.NEXT_PUBLIC_AWS_NAME!,
     Key: generateFileName(),
     ContentType: fileType,
     ContentLength: fileSize,
@@ -76,7 +76,7 @@ export async function deletePostAWS(imageUrl: string) {
     const key = url.split("/").slice(-1)[0];
 
     const deleteParams = {
-      Bucket: process.env.AWS_NAME!,
+      Bucket: process.env.NEXT_PUBLIC_AWS_NAME!,
       Key: key,
     };
 

@@ -3,17 +3,14 @@
 import Image from "next/image";
 
 import albumIcon from "@/assets/album-01.svg";
-import mockProfilPic from "@/assets/mockProfilPic.png";
 import { useAuth } from "@/context/AuthContext";
 import { gql, useMutation } from "@apollo/client";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { generateUploadURL } from "@/pages/api/s3";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-import { revalidatePath } from "next/cache";
-import { defaultProfilPicture } from "@/utils/defaultImages";
 import computeSHA256 from "@/utils/computeSHA256";
+import { defaultProfilPicture } from "@/utils/defaultImages";
 
 export default function UserPost() {
   const [content, setContent] = useState("");
