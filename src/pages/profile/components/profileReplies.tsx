@@ -43,7 +43,7 @@ export default function ProfileReplies(username: any) {
 
   return (
     <div>
-      <div>
+      <div className="space-y-3">
         {data.comments.length === 0 && (
           <p className="flex justify-center items-center text h-32 text-subTitle">
             Sorry, you have no replies.
