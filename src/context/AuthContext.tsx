@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }: any) => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/graphql?query=${LOGIN_FLOW}`,
+        `https://tailored-social-network-ls4t.vercel.app//api/graphql?query=${LOGIN_FLOW}`,
         {
           method: "GET",
           headers: {
@@ -106,7 +106,7 @@ export const AuthProvider = ({ children }: any) => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/graphql?query=${REGISTER_USER} `,
+        `https://tailored-social-network-ls4t.vercel.app//api/graphql?query=${REGISTER_USER} `,
         {
           method: "POST",
           headers: {
@@ -157,7 +157,7 @@ export const AuthProvider = ({ children }: any) => {
     `;
 
     const response = await fetch(
-      `http://localhost:3000/api/graphql?query=${GET_USER}`,
+      `https://tailored-social-network-ls4t.vercel.app//api/graphql?query=${GET_USER}`,
       {
         method: "GET",
         headers: {
