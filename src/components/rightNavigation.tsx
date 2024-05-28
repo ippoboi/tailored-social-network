@@ -64,6 +64,8 @@ function RightNavigation() {
   if (error) return <p>Error</p>;
   if (loading) return <p>Loading...</p>;
 
+  const seenIds = new Set();
+
   return (
     <div className="flex flex-col h-screen center-items p-5 gap-5">
       <div className="space-y-2">
@@ -71,6 +73,14 @@ function RightNavigation() {
 
         {data.users[0]?.recommendUserByHobby
           ?.filter((item: any) => item.username !== user.username)
+          .filter((item: any) => {
+            if (seenIds.has(item.username)) {
+              return false;
+            } else {
+              seenIds.add(item.username);
+              return true;
+            }
+          })
           .map((item: any) => (
             <div key={item.id}>
               <Suggestions {...item} />
