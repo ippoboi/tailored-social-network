@@ -4,9 +4,9 @@ import { typeDefs } from "./typeDefs";
 import { createPubSub, createYoga } from "graphql-yoga";
 
 // Create a Neo4j driver instance to connect to Neo4j AuraDB
-const neo4jUri = process.env.NEXT_PRIVATE_NEO4J_URI || "";
-const neo4jUser = process.env.NEXT_PUBLIC_NEO4J_USER || "";
-const neo4jPassword = process.env.NEXT_PRIVATE_NEO4J_PASSWORD || "";
+const neo4jUri = process.env.NEO4J_URI || "";
+const neo4jUser = process.env.NEO4J_USER || "";
+const neo4jPassword = process.env.NEO4J_PASSWORD || "";
 
 const driver = neo4j.driver(
   neo4jUri,
