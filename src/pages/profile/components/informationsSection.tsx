@@ -136,11 +136,13 @@ export default function InformationsSection(username: any) {
           >
             {!showMore ? (
               <div>
-                Learn more about <span className="text-white">Dimitar</span>
+                Learn more about{" "}
+                <span className="text-white">{username.username}</span>
               </div>
             ) : (
               <div>
-                See less about <span className="text-white">Dimitar</span>
+                See less about{" "}
+                <span className="text-white">{username.username}</span>
               </div>
             )}
           </button>
