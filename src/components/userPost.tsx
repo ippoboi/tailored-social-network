@@ -158,6 +158,8 @@ export default function UserPost() {
             <div className="mt-4">
               {file.type.startsWith("image/") ? (
                 <Image
+                  width={400}
+                  height={400}
                   src={fileUrl}
                   alt="Selected file"
                   className="w-full h-auto max-h-96 rounded-lg object-contain bg-btn-background"

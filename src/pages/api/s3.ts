@@ -6,15 +6,14 @@ import {
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 import crypto from "crypto";
-import { revalidatePath } from "next/cache";
 const generateFileName = (bytes = 32) =>
   crypto.randomBytes(bytes).toString("hex");
 
 const s3Client = new S3Client({
   region: process.env.NEXT_PUBLIC_AWS_REGION!,
   credentials: {
-    accessKeyId: process.env.NEXT_PRIVATE_WS_ACCESSS_KEY_ID!,
-    secretAccessKey: process.env.NEXT_PRIVATE_WS_SECRET_ACCESS_KEY!,
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY!,
   },
 });
 

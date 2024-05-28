@@ -1,14 +1,13 @@
-import Image from "next/image";
 import editProfileIcon from "@/assets/editProfileIcon.svg";
-import { useState } from "react";
-import ProfileInfoEditModal from "./profileInfoEditModal";
-import HobbyComp from "./hobbyComp";
-import ProjectComp from "./projectComp";
-import LoveComp from "./loveComp";
-import EduComp from "./eduComp";
 import testIcon from "@/assets/shareIcon.svg";
-import { gql, useQuery } from "@apollo/client";
 import { useAuth } from "@/context/AuthContext";
+import { gql, useQuery } from "@apollo/client";
+import Image from "next/image";
+import { useState } from "react";
+import EduComp from "./eduComp";
+import LoveComp from "./loveComp";
+import ProfileInfoEditModal from "./profileInfoEditModal";
+import ProjectComp from "./projectComp";
 
 export default function InformationsSection(username: any) {
   const [showInfoEdit, setShowInfoEdit] = useState(false);
@@ -59,7 +58,12 @@ export default function InformationsSection(username: any) {
                 Edit Info
               </p>
 
-              <Image alt="editProfileIcon" src={editProfileIcon} />
+              <Image
+                width={16}
+                height={16}
+                alt="editProfileIcon"
+                src={editProfileIcon}
+              />
             </button>
           )}
         </div>

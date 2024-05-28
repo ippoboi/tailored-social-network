@@ -1,13 +1,11 @@
-import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import testIcon from "@/assets/shareIcon.svg";
-import LoveComp from "./loveComp";
-import HobbyComp from "./hobbyComp";
-import ProjectComp from "./projectComp";
-import EduComp from "./eduComp";
-import { gql, useMutation, useQuery } from "@apollo/client";
 import { useAuth } from "@/context/AuthContext";
+import { gql, useMutation, useQuery } from "@apollo/client";
+import EduComp from "./eduComp";
+import LoveComp from "./loveComp";
+import ProjectComp from "./projectComp";
 
 const GET_HOBBIES = gql`
   query getHobbies {

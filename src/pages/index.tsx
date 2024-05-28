@@ -1,9 +1,8 @@
-import PostComponent from "@/components/postComponent";
 import SubscriptionFeed from "@/components/subscriptionFeed";
 import SuggestedFeed from "@/components/suggestedFeed";
 import UserPost from "@/components/userPost";
 import { useAuth } from "@/context/AuthContext";
-import { gql, useQuery, useSubscription } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 
 import { Montserrat } from "next/font/google";
 import { useState } from "react";

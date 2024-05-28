@@ -7,11 +7,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, user } = useAuth();
   const router = useRouter();
 
-  setTimeout(() => {
-    if (!isAuthenticated && !user) {
-      router.push("/auth/login");
-    }
-  }, 1000);
+  if (!isAuthenticated) {
+    router.push("/auth/login");
+  }
 
   return (
     <div className="flex h-screen">

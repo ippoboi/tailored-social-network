@@ -1,16 +1,15 @@
 import editProfileIcon from "@/assets/editProfileIcon.svg";
 import locationIcon from "@/assets/locationIcon.svg";
-import mockPostImage from "@/assets/mockPostImage.png";
 import permanentJobIcon from "@/assets/permanentJobIcon.svg";
-import { gql, useMutation, useQuery } from "@apollo/client";
-import Image from "next/image";
-import { useState } from "react";
-import ProfileEditModal from "./profileEditModal";
 import { useAuth } from "@/context/AuthContext";
 import {
   defaultBannerPicture,
   defaultProfilPicture,
 } from "@/utils/defaultImages";
+import { gql, useMutation, useQuery } from "@apollo/client";
+import Image from "next/image";
+import { useState } from "react";
+import ProfileEditModal from "./profileEditModal";
 
 import moreIcon from "@/assets/moreIcon.svg";
 

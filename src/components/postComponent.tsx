@@ -131,7 +131,7 @@ export default function PostComponent(props: any) {
                 onClick={() => setShowOptions(!showOptions)}
                 className="cursor-pointer"
               >
-                <Image alt="moreIcon" src={moreIcon} />
+                <Image width={20} height={20} alt="moreIcon" src={moreIcon} />
               </div>
             )}
             {showOptions && (
@@ -154,6 +154,8 @@ export default function PostComponent(props: any) {
             <div>{props.content}</div>
             {props.imageURL && (
               <Image
+                width={500}
+                height={500}
                 alt="postImage"
                 src={props.imageURL}
                 className="rounded-lg"
