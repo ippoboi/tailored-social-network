@@ -70,8 +70,7 @@ function RightNavigation() {
         <div className="text-subtileText">Suggestions</div>
 
         {data.users[0]?.recommendUserByHobby
-          ?.slice(0, usersToShow)
-          .filter((item: any) => item.username !== user.username)
+          ?.filter((item: any) => item.username !== user.username)
           .map((item: any) => (
             <div key={item.id}>
               <Suggestions {...item} />
