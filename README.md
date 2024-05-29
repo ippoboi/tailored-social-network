@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Hello,
+
+This is a school project where we had to build a Tailored Social Network project inspired by the FOAF ontology. This was made possible with modern technoogies like Nextjs, GraphQl and Neo4j Graph Database.
 
 ## Getting Started
 
